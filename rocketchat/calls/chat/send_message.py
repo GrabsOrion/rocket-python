@@ -8,4 +8,7 @@ class SendMessage(PostMixin, RocketChatBase):
         return self.endpoint
 
     def build_payload(self, **kwargs):
-        return {'text': kwargs.get('message'), 'roomId': kwargs.get('room_id')}
+        return {'text': kwargs.get('message'),
+                'roomId': kwargs.get('room_id'),
+                'emoji': kwargs.get('emoji')
+                }
